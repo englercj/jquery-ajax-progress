@@ -8,7 +8,7 @@ A simple patch to jQuery that will call a 'progress' callback, using the
 Simply include the script on your page:
 
 ```html
-<script src="/js/jquery.ajax-progress.js"></script>
+<script src="js/jquery.ajax-progress.js"></script>
 ```
 
 Then, whenever you make an ajax request, just specify a progress callback:
@@ -16,7 +16,7 @@ Then, whenever you make an ajax request, just specify a progress callback:
 ```javascript
 $.ajax({
     method: 'GET',
-    url: '/js/bird.json',
+    url: 'data/bird.json',
     dataType: 'json',
     success: function() { },
     error: function() { },
@@ -38,3 +38,7 @@ $.ajax({
 ```
 
 You can see it in action on the `demo.html` page.
+
+### Notes
+
+ - This will not work using the `file://` protocol, see [XMLHttpRequest - Monitoring Progress](https://developer.mozilla.org/en-US/docs/DOM/XMLHttpRequest/Using_XMLHttpRequest#Monitoring_progress) for more info.
