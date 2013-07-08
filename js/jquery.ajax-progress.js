@@ -1,4 +1,12 @@
 (function($, window, undefined) {
+    //is onprogress supported by browser?
+    var hasOnProgress = ("onprogress" in $.ajaxSettings.xhr());
+
+    //If not supported, do nothing
+    if (!hasOnProgress) {
+        return;
+    }
+    
     //patch ajax settings to call a progress callback
     var oldXHR = $.ajaxSettings.xhr;
     $.ajaxSettings.xhr = function() {
